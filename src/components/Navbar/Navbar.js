@@ -34,8 +34,8 @@ function Navbar(props){
         <Divider variant="middle"/>
         {/* liste des pages */}
         <List>
-          <NavbarItem title={"Products"} url={"/products"} icon={<ShoppingCartRoundedIcon/>}/>
-          <NavbarItem title={"Admin"} url={"/admin/products"} icon={<SupervisorAccountRoundedIcon/>}/>
+          <NavbarItem title={"Products"} url={"products"} icon={<ShoppingCartRoundedIcon/>}/>
+          <NavbarItem title={"Admin"} url={"admin/products"} icon={<SupervisorAccountRoundedIcon/>}/>
         </List>
     </div>
   );
