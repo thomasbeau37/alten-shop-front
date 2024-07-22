@@ -8,7 +8,7 @@ function App() {
       <div>
         <Router />
       </div>
-      </CustomThemeProvider>
+    </CustomThemeProvider>
   );
 }
 
