@@ -7,8 +7,10 @@ import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
 import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
 import ProductList from '../../components/Products/ProductList';
 import axios from 'axios';
+import { useTheme } from '@emotion/react';
 
 function Products() {
+  const theme = useTheme();
   //A REMPLIR PAR JSON OU API
   // const [products, setProducts] = useState(productsData.products)
   const [products, setProducts] = useState([])
@@ -98,7 +100,7 @@ function Products() {
         height: 2,
         width: 1,
         p:1,
-        backgroundColor: "#F5F5F5"
+        backgroundColor: theme.palette.secondary.main
       }}
       display={"flex"} 
       justifyContent="center"
@@ -112,7 +114,7 @@ function Products() {
           width:{xs: 9/10, lg: 6/10},
           height:1,
           maxHeight: 1, 
-          backgroundColor: "white",
+          backgroundColor: theme.palette.container.background,
           borderRadius: 1
         }}
       >

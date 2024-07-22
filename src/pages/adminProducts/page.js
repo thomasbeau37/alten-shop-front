@@ -7,8 +7,10 @@ import { Box, Button, IconButton } from '@mui/material';
 import productsData from "../../data/testData.json";
 import ProductForm from './ProductForm';
 import axios from 'axios';
+import { useTheme } from '@emotion/react';
 
 function AdminProducts() {
+  const theme = useTheme();
   //products from json or api
 	// const [products, setProducts] = useState(productsData.products)
 	const [products, setProducts] = useState([])
@@ -176,7 +178,7 @@ function AdminProducts() {
           />
       }
       {/* tableau de produits */}
-			<Box sx={{height: 1, maxHeight: 1, width: 1, backgroundColor: "red"}} flexGrow={1}> 
+			<Box sx={{height: 1, maxHeight: 1, width: 1}} flexGrow={1}> 
         <MaterialReactTable
           onRowSelectionChange={setRowSelection} //update state when selection changes
           getRowId={(row) => row.id}
@@ -187,7 +189,7 @@ function AdminProducts() {
               display: "flex",
               "flex-flow": "column",
               '& tr:nth-of-type(odd) > td': {
-                  backgroundColor: '#f5f5f5',
+                  backgroundColor: theme.palette.secondary.main,
               },
             }
           }}

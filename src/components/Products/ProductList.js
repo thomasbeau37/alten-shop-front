@@ -1,6 +1,7 @@
 import { Box, IconButton, Rating, Stack, styled } from '@mui/material'
 import React from 'react'
 import AddShoppingCartRoundedIcon from '@mui/icons-material/AddShoppingCartRounded';
+import { useTheme } from '@emotion/react';
 
 //styled rating pour changer la couleur des icones
 const StyledRating = styled(Rating)({
@@ -27,13 +28,14 @@ const ResponsiveH4 = styled('h4')(({ theme }) => ({
 
 //composant qui affiche un produit pour la vue liste
 const ProductList = ({product}) => {
+  const theme = useTheme();
   return (
     <Stack
       direction="row"
       justifyContent="space-between"
       alignItems="center"
       spacing={2}
-      sx={{border: 1, borderRadius: 1, p: 1, m:1, borderColor: "#C2C2C2"}}
+      sx={{border: 1, borderRadius: 1, p: 1, m:1, borderColor: theme.palette.text.secondary}}
     >
       {/* NAME */}
       <Box>
@@ -57,8 +59,8 @@ const ProductList = ({product}) => {
         <StyledRating size="small" name="read-only" value={product.rating} readOnly />
       </Box>
       {/* ADD TO CART */}
-      <Box sx={{backgroundColor: "#1976d2", borderRadius: 1}}>
-        <IconButton aria-label="add to cart" sx={{color: "white"}}>
+      <Box sx={{backgroundColor: theme.palette.button.main, borderRadius: 1}}>
+        <IconButton aria-label="add to cart" color='secondary'>
           <AddShoppingCartRoundedIcon/>
         </IconButton>
       </Box>

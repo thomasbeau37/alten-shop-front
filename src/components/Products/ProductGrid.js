@@ -2,6 +2,7 @@ import { Box, Grid, IconButton, Rating, Stack } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import React from 'react'
 import AddShoppingCartRoundedIcon from '@mui/icons-material/AddShoppingCartRounded';
+import { useTheme } from '@emotion/react';
 
 //styled rating pour changer la couleur des icones
 const StyledRating = styled(Rating)({
@@ -12,6 +13,7 @@ const StyledRating = styled(Rating)({
 
 //composant qui affiche un produit pour la vue grille
 const ProductGrid = ({product}) => {
+  const theme = useTheme();
   return (
     <Grid item xs={12} sm={6} md={4} lg={4} xl={3} sx={{padding: 2}}>
       <Box sx={{
@@ -27,7 +29,8 @@ const ProductGrid = ({product}) => {
           height: '100%',
           border: 1,
           borderRadius: 1,
-          borderColor: "#C2C2C2"
+          borderColor: theme.palette.text.secondary,
+          backgroundColor: theme.palette.secondary.main
         }}>
           <Stack
             direction="column"
@@ -52,8 +55,8 @@ const ProductGrid = ({product}) => {
               <StyledRating size="small" name="read-only" value={product.rating} readOnly />
             </Box>
             {/* ADD TO CART */}
-            <Box sx={{backgroundColor: "#1976d2", borderRadius: 1}}>
-              <IconButton aria-label="add to cart" sx={{color: "white"}}>
+            <Box sx={{backgroundColor: theme.palette.button.main, borderRadius: 1}}>
+              <IconButton aria-label="add to cart" color='secondary'>
                 <AddShoppingCartRoundedIcon/>
               </IconButton>
             </Box>

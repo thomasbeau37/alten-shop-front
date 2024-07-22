@@ -4,9 +4,11 @@ import Navbar from '../components/Navbar/Navbar'
 import { Outlet } from 'react-router-dom'
 import { Header } from '../components/Header/Header'
 import { Breadcrumb } from '../components/Breadcrumb/Breadcrumb'
+import { useTheme } from '@emotion/react'
 
 //Layout principal du site avec menu à gauche et contenu à droite
 function Layout(){
+  const theme = useTheme();
   return (
     <Stack direction={"row"} display={'flex'}>
       <Box
@@ -19,7 +21,7 @@ function Layout(){
       >
         <Navbar />
       </Box>
-      <Stack direction={"column"} flexGrow={1} sx={{backgroundColor: "#F5F5F5", maxHeight: '100vh', height: '100vh'}}>
+      <Stack direction={"column"} flexGrow={1} sx={{backgroundColor: theme.palette.secondary.main, maxHeight: '100vh', height: '100vh'}}>
         <Header />
         <Breadcrumb/>
         <Outlet />

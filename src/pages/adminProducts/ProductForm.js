@@ -153,13 +153,13 @@ const ProductForm = ({ selectedProduct, open, handleClose, handleCreate }) => {
             justifyContent: 'center',
             mt: 2
           }}>
-            <Button type="submit" variant="contained" color="primary">
-            {selectedProduct === null &&
-              <span>Create</span>
-            }
-            {selectedProduct !== null &&
-              <span>Edit</span>
-            }
+            <Button type="submit" variant="contained" color="secondary">
+              {selectedProduct === null &&
+                <span>Create</span>
+              }
+              {selectedProduct !== null &&
+                <span>Edit</span>
+              }
             </Button>
           </Box>
         </form>
